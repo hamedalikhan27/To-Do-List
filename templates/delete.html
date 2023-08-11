@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Delete</title>
+
+        <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+
+        <style>
+
+            body{
+                background-color: #ecc163;
+            }
+        
+            input{
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+            }
+        
+            .center-column{
+                width:600px;
+                margin: 20px auto;
+                padding:20px;
+                background-color: #b3d6f5;
+                border-radius: 3px;
+                box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+            }
+        
+            .btn-danger{
+                background-color: #ffae19;
+                border-color: #e59400;
+                width: auto;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div class="center-column">
+        <p>Are you sure you want to delete {{item}} ?</p>
+        <a class="btn btn-sm btn-info" href="{% url 'list' %}">cancle</a>
+        <form method="post">
+            {% csrf_token %}
+            <input class="btn btn-sm btn-danger" type="submit" value="Delete">
+        </form>
+        </div>
+    </body>
+</html>
